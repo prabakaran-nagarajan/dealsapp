@@ -1,0 +1,26 @@
+ <h1>Your Deals</h1>
+
+<% if @deals.length == 0%>
+   <p> No Deals created so far</p>
+<% else %>
+
+
+<ol class ="deals">
+
+ <% @deals.each do |deal| %>
+  <li>
+    <span class="content">
+    <%=link_to deal.dealname, deal_path(deal) %><br>
+    Location: <%= deal.location %><br>
+    DealType: <%= deal.dealtype %><br>
+    <%= link_to '<button>Edit</button>'.html_safe, edit_deal_path(deal), :class=>"inbox-sf-add-btn tip" %>
+    <%= link_to '<button>Delete</button>'.html_safe, deal_path(deal),
+                    method: :delete, data: { confirm: 'Are you sure?' } %>
+
+    </span>
+  </li>
+ <% end %>
+</ol>
+<% end %>
+
+

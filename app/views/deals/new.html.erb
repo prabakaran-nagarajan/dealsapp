@@ -1,0 +1,63 @@
+<%= form_for :deal,url: deals_path do |f| %>
+
+<% if @deal.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@deal.errors.count, "error") %> prohibited
+      this article from being saved:</h2>
+    <ul>
+    <% @deal.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <p>
+    <%= f.label :DealName %><br>
+    <%= f.text_field :dealname %>
+  </p>
+
+  <p>
+    <%= f.label :Startdate %><br>
+    <%= f.text_field :startdate, :id => "datepicker" %>
+  </p>
+
+  <p>
+    <%= f.label :Enddate %><br>
+    <%= f.text_field :enddate, :id => "datepicker1" %>
+  </p>
+
+  <p>
+     <%= f.label :Type %> 
+     <%= f.select :dealtype, options_for_select(%w[Resort PaintBall Rafting Bowling]) %> 
+ </p>
+
+  <p>
+    <%= f.label :Location %><br>
+    <%= f.text_field :location %>
+  </p>
+
+  <p>
+    <%= f.label :ActualPrice %><br>
+    <%= f.text_field :actualprice %>
+  </p>
+
+  <p>
+    <%= f.label :DiscountPrice %><br>
+    <%= f.text_field :discountprice %>
+  </p>
+
+  <p>
+    <%= f.label :ContactNumber %><br>
+    <%= f.text_field :contact %>
+  </p>
+
+  <p>
+    <%= f.label :Address %><br>
+    <%= f.text_area :address %>
+  </p>
+
+  <p>
+    <%= f.submit 'Create Deal' %>
+  </p>
+<% end %>

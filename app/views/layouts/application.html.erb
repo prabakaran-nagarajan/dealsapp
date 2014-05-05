@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+ <title>Deals</title>
+  <%= javascript_include_tag "jquery-ui-1.10.4.custom" %>
+  <%= stylesheet_link_tag    "application", :media => "all","data-turbolinks-track" => true %>
+  <%= javascript_include_tag "application","data-turbolinks-track" => true %>
+  <%= csrf_meta_tags %>
+
+  <%= render 'layouts/shim' %>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css">
+<script src="http://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="http://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<link rel="stylesheet" href="/resources/demos/style.css">
+
+<script>
+$(function() {
+$( "#datepicker" ).datepicker({dateFormat: 'yy/mm/dd'});
+$( "#datepicker1" ).datepicker({dateFormat: 'yy/mm/dd'});
+$( "#datepicker2" ).datepicker({dateFormat: 'yy/mm/dd'});
+
+});
+</script>
+</head>
+
+<body>
+    <%= render 'layouts/header' %>
+    <% if notice %>
+    <p class="alert alert-success"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+    <p class="alert alert-danger"><%= alert %></p>
+    <% end %>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+</body>
+
+</html>

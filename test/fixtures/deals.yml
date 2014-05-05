@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  startdate: 2014-04-28
+  enddate: 2014-04-28
+  location: MyString
+  actualprice: 1
+  discountprice: 1
+  type: 
+  contact: MyString
+  address: MyText
+  member: 
+
+two:
+  startdate: 2014-04-28
+  enddate: 2014-04-28
+  location: MyString
+  actualprice: 1
+  discountprice: 1
+  type: 
+  contact: MyString
+  address: MyText
+  member: 

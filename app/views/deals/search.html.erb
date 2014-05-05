@@ -1,0 +1,20 @@
+<%= form_for :dealssearchparam,url: searchdealsresult_path do |f| %>
+  <p>
+    <%= f.label :date %><br>
+    <%= f.text_field :date, :id => "datepicker2" %>
+  </p>
+
+  <p>
+     <%= f.label :Type %>
+     <%= f.select :dealtype, options_for_select(%w[Resort PaintBall Rafting Bowling]) %>
+ </p>
+
+  <p>
+    <%= f.label :Location %><br>
+    <%= f.text_field :location %>
+  </p>
+
+  <p>
+   <%= f.submit 'Search Deals' %>
+  </p>
+<% end %>

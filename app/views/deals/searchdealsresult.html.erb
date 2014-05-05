@@ -1,0 +1,23 @@
+ <h1>Result Deals</h1>
+
+<% if @deals.length == 0%>
+   <p> No Deals with your requirements found</p>
+<% else %>
+
+
+<ol class ="deals">
+
+ <% @deals.each do |deal| %>
+  <li>
+    <span class="content">
+    <%=link_to deal.dealname, deal_path(deal) %><br>
+    Location: <%= deal.location %><br>
+    DealType: <%= deal.dealtype %><br>
+    Price: <%= deal.actualprice %><br>
+    DiscountPrice: <%= deal.discountprice %><br>
+    </span>
+  </li>
+ <% end %>
+</ol>
+<% end %>
+
